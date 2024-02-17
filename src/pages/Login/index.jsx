@@ -57,7 +57,7 @@ const gotoLogin=()=>{
 
                 {/* 标题部分 */}
                 <div className={logstyle.title}>
-                    <h1>电影票平台</h1>
+                    <h1> 电影票平台 </h1>
                 </div>
                 {/* 表单部分 */}
                 <div className="loginbox-form">
