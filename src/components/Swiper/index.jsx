@@ -1,46 +1,35 @@
-import React, { useState } from "react";
-// 需安装依赖：
-// 1.npm install --save react-swipeable-views -f
-// 2.npm install --save react-swipeable-views-utils -f（安装依赖要退出运行状态，依赖不成功空格-f强制执行）
-import SwipeableViews from 'react-swipeable-views';
-import { autoPlay } from 'react-swipeable-views-utils';
-
-import './style.less'
-import Pagination from "./Pagination"
-
-// 此处为轮播图组件
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-
-
-const Swiper = (props)=>{
-
-    const [index,setIndex]=useState(0)
-
-    function handleChangeIndex(index){
-        // 引入自动轮播
-        setIndex(index)
-    }
-    return (
-        <div className="swiper" >
-            {/* index:高亮的设置，默认在那一张 */}
-          <AutoPlaySwipeableViews index={index} onChangeIndex={handleChangeIndex}>
-            {
-                props.banners.map((ele,index)=>{
-                    return(
-                        <div className="swiper-view" key={index}>
-                            <img src={ele}  />
-                         </div>
-                    )
-                })
-            }
-               
-          </AutoPlaySwipeableViews>
-
-          <Pagination len={props.banners.length} currentIndex={index}/>
+import React from 'react';
+import { Carousel } from 'antd';
+const contentStyle = {
+    // height: '452px',
+    // color: '#fff',
+    lineHeight: '160px',
+    textAlign: 'center',
+    background: '#364d79',
+    dotWidth:'452px'
+};
+const Swiper = () => (
+    <Carousel autoplay >
+        <div>
+            <h3 style={contentStyle}>
+                <img style={{width:"100%"}} src='https://img2.baidu.com/it/u=3887787861,1234070352&fm=253&fmt=auto&app=138&f=JPEG?w=1215&h=429'/>
+            </h3>
         </div>
-      );
-}
-
-
-
-export default Swiper
+        <div>
+            <h3 style={contentStyle}>
+               <img style={{width:"100%"}} src='https://img2.baidu.com/it/u=2452014056,4054215755&fm=253&fmt=auto&app=138&f=JPEG?w=1280&h=452'/>
+            </h3>
+        </div>
+        <div>
+            <h3 style={contentStyle}>
+               <img style={{width:"100%"}} src='https://img1.baidu.com/it/u=1690770501,2376046528&fm=253&fmt=auto&app=138&f=JPEG?w=1280&h=452'/>
+            </h3>
+        </div>
+        <div>
+            <h3 style={contentStyle}>
+               <img style={{width:"100%"}} src='https://img0.baidu.com/it/u=292473075,3974453600&fm=253&fmt=auto&app=138&f=JPEG?w=1215&h=429'/>
+            </h3>
+        </div>
+    </Carousel>
+);
+export default Swiper;

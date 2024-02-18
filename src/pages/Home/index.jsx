@@ -1,33 +1,26 @@
-import {React,useState} from 'react'
+import React from "react";
 import "./home.less"
-import Swiper from '../../components/Swiper'
-import Banner1 from '../../assets/images/banner1.png'
-import Banner2 from '../../assets/images/banner2.png'
-import Banner3 from '../../assets/images/banner3.png'
+
+import Swiper from "../../components/Swiper/index";
+
 import data from './data/data.json'
 import updata from './data/updata.json'
 import soudata from './data/soudata.json'
 import today from './data/today.json'
 import expect from './data/expect.json'
 import topdata from './data/topdata.json'
+
 import Buttonzu from '../../components/Buttonzu/index'
-// import Searchmain from '../Searchmain'
-import { NavLink } from "react-router-dom";
 
-// import onehome from '../detail/onehome'
+const Home = () =>{
 
-const Home = () => {
-    // const [data, setData] = useState(require('./data.json'))
-    // 年会不能停！的详情页
     const onehandleClick = () => {  
-        window.location.href = 'http://localhost:3000/#/onehome'; 
-        
-      };  
-    
-      
-    return (
+        window.location.href = 'http://localhost:3000/onehome'; 
+      }; 
+
+    return(
         <div>
-            
+            {/* <h1>Home</h1> */}
             {/* 搜索框 */}
             <HomeSearch />
             {/* 电影轮播图 */}
@@ -36,9 +29,7 @@ const Home = () => {
                     <p
                         style={{ fontSize: '30px', color: 'crimson' }}
                     ><strong>精彩电影</strong></p><br />
-                    <Swiper banners={[Banner1, Banner2, Banner3]}
-
-                    />
+                     <Swiper/>
                 </div>
             </div>
 
@@ -56,7 +47,7 @@ const Home = () => {
                     <ul className='film-source-list'>
                         <li ><div className='film-source-all' onChange={onehandleClick}>
                             {/* 图片 */}
-                            <a href='http://localhost:3000/#/onehome'>
+                            <a href='http://localhost:3000/onehome'>
                                 <div >
                                     <img
                                         className='film-source-img'
@@ -440,13 +431,14 @@ const Home = () => {
                     </ul>
                 </div>
             </div>
-        </div>
+            
 
+        </div>
     )
 }
 function HomeSearch() {
     const onSearchmain = () => {  
-        window.location.href = 'http://localhost:3000/?#/searchmain ';
+        window.location.href = 'http://localhost:3000/searchmain ';
       };  
     return (
         <div className='HomeSearch'>
@@ -467,6 +459,4 @@ function HomeSearch() {
         </div>
     )
 }
-
-
-export default Home
+export default  Home

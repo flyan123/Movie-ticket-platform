@@ -1,38 +1,50 @@
 import React, { useState } from "react";
-import "./style.less"
-// 跳转路由
-import { NavLink } from "react-router-dom";
-import { Outlet } from "react-router-dom";
+import topnavstyle from "./style.module.less"
+// 旧跳转路由
+// import { NavLink } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
+
+// 新路由引入
+import {useRoutes,Link} from 'react-router-dom'
+
 import { UserOutlined } from '@ant-design/icons';
 import { Avatar, Space } from 'antd';
 
 
+
 const TopNav = () => {
     return (
-        <div className="nav-footer">
-            <ul className="clear-fix">
+        <div className={topnavstyle.footer}>
+            
+            <ul className={topnavstyle.fix}>
+
                 {/* <p id="address">定位</p> */}
                 {/* <Location className="address"/> */}
                 <li>
                     {/* exact高亮 */}
+                    <Link to='/' id={topnavstyle.homename}>首页</Link>
 
-                    <NavLink exact to='/' id="homename" >
+                    {/* <NavLink exact to='/' id="homename" >
                         主页
-                    </NavLink>
+                    </NavLink> */}
                 </li>
                 <li>
-                    <NavLink to='/nowfil' id="shopname">
-                        分类
-                    </NavLink>
+                     <Link to='/clafil'  id={topnavstyle.shopname}>电影</Link>
+
                 </li>
+
+                <li><Link to='/cinema' id={topnavstyle.cinema}>影院</Link></li>
+
+                <li><Link to='/actout' id={topnavstyle.actout}>演出</Link></li>
+            {/* 用户 */}
                 <li>
-                    <NavLink to='/user' id="username">
+                     <Link to='/user' id={topnavstyle.user}>
                         <Space direction="vertical" size={16}>
                             <Space wrap size={16}>
                                 <Avatar shape="square" size={50} icon={<UserOutlined />} />
                             </Space>
                         </Space>
-                    </NavLink>
+                     </Link>
                 </li>
             </ul>
         </div>

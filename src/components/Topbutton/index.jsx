@@ -7,7 +7,7 @@ import { BgColorsOutlined } from '@ant-design/icons';
 const items = [
   {
     label: '后台管理系统',
-    key: '/',
+    key: '/hhome',
   },
   {
     label: '注册',

@@ -1,0 +1,49 @@
+[
+    {
+        "id":"1",
+        "src":" https://p0.pipi.cn/mmdb/54ecde8d8d3ddd50c8f0ee963d22eece610b8.jpg?imageView2/1/w/160/h/220",
+        "name":"一个人的江湖",
+        "people":"4550",
+        "time":"1月7日上映"
+    },{
+        "id":"2",
+        "src":" https://p0.pipi.cn/mmdb/fb73862fb53339be2a230f6a3888b9bfa7423.jpg?imageView2/1/w/160/h/220",
+        "name":"皮克之下",
+        "people":"678",
+        "time":"1月9日上映"
+    },{
+        "id":"3",
+        "src":"https://p0.pipi.cn/mmdb/fb7386dd923dddd7c3be2ac9b23f5299b94e7.jpg?imageView2/1/w/160/h/220",
+        "name":"夏来冬往",
+        "people":"542",
+        "time":"1月10日上映"
+    },
+    {
+        "id":"4",
+        "src":" https://p0.pipi.cn/mmdb/fb73862ff2ab12d7c38ea3f6abe57c9c30d4d.jpg?imageView2/1/w/160/h/220",
+        "name":"回西藏",
+        "people":"242",
+        "time":"1月11日上映"
+    },
+    {
+        "id":"5",
+        "src":"https://p0.pipi.cn/mmdb/54ecde8d87af2a2ff739dd0e6eb9111084681.jpg?imageView2/1/w/160/h/220 ",
+        "name":"大雨",
+        "people":"424",
+        "time":"1月12日上映"
+    },
+    {
+        "id":"6",
+        "src":" https://p0.pipi.cn/mmdb/fb73862f7a3923395b67cb4ced5752d80d4b3.jpg?imageView2/1/w/160/h/220",
+        "name":"动物园里有什么？",
+        "people":"215",
+        "time":"1月12日上映"
+    },
+    {
+        "id":"7",
+        "src":" https://p0.pipi.cn/mmdb/54ecde8d87a51becd8b535e7398e69252338a.jpg?imageView2/1/w/160/h/220",
+        "name":"养蜂人",
+        "people":"575",
+        "time":"1月12日上映"
+    }
+]
