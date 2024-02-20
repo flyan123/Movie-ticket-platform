@@ -1,4 +1,5 @@
 const express = require("express");
+// npm i --save express 
 const app =express();
 const router = require("./router");
 const bodyparser = require("body-parser")

@@ -84,8 +84,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
    1. 安装依赖 npm i --save express 
    2. 服务器运行的端口；
 7. 使用 validator 校验工具
-   参考网址：https://wangchujiang.com/validator.js/#install
-   npm install validator.tool --save
+参考网址：https://wangchujiang.com/validator.js/#install
+   npm install validator.tool --save ×
+   npm install --save validator √
 
 检验是否为空： loadsh
 参考网址：https://www.lodashjs.com/docs/lodash.isEmpty#_isemptyvalue
+   npm install --save loadsh √
+
+8. 安装网络请求方案:
+   npm install --save axios √
+
+! 如果丢包现象要删除 node modules
+重新安装 npm install
