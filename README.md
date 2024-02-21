@@ -81,7 +81,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 4. npm install --save-dev redux-devtools-extension √
 5. 获取数据
 6. 创建服务器 server
-   1. 安装依赖 npm i --save express 
+   1. 安装依赖 npm i --save express  √
    2. 服务器运行的端口；
 7. 使用 validator 校验工具
 参考网址：https://wangchujiang.com/validator.js/#install
@@ -97,3 +97,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ! 如果丢包现象要删除 node modules
 重新安装 npm install
+
+1. 

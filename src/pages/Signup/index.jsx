@@ -1,4 +1,5 @@
 import React,{Component}  from "react";
+import api from '../../api/index'
 
 export default  class Signup extends Component{
 // 受控组件
@@ -14,7 +15,19 @@ export default  class Signup extends Component{
 
   onSubmit=(e)=>{
     e.preventDefault();
-    console.log(this.state)
+    // console.log(this.state)
+    api.register(
+      {
+        nickname:this.state.nickname,
+        password:this.state.password,
+        confirm:this.state.confirm,
+        email:this.state.email,
+      }
+    ).then(res=>{
+      console.log(res.data)
+    }).catch(error=>{
+      console.log(error)
+    })
   }
   changeHandle=(e)=>{
 

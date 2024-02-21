@@ -9,7 +9,7 @@ app.use(bodyparser.urlencoded({
 }))
 
 
-app.use("./api",router)
+app.use("/api",router)
 
 
 
