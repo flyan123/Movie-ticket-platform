@@ -90,6 +90,8 @@ const hasJsxRuntime = (() => {
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
 module.exports = function (webpackEnv) {
+  
+  
   const isEnvDevelopment = webpackEnv === 'development';
   const isEnvProduction = webpackEnv === 'production';
 
@@ -189,6 +191,9 @@ module.exports = function (webpackEnv) {
   };
 
   return {
+    // resolve: {  
+    //   fallback: { "querystring": require.resolve("querystring-es3") }  
+    // }  ,
     target: ['browserslist'],
     // Webpack noise constrained to errors and warnings
     stats: 'errors-warnings',

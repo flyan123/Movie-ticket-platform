@@ -98,4 +98,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ! 如果丢包现象要删除 node modules
 重新安装 npm install
 
-1. 
+9. 打开后台服务器Signup
+   1. cd server
+   2. node index.js  
+
+npm install querystring-es3
+
+ ## 跨域解决方案
+1. 后台：cors第三方
+    npm install --save cors
+2. 前台：设置跨域代理
+    参考地址：https://github.com/facebook/create-react-app/blob/master/docusaurus/docs/proxying-api-requests-in-development.md

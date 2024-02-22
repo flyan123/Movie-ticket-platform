@@ -3,7 +3,10 @@ const express = require("express");
 const app =express();
 const router = require("./router");
 const bodyparser = require("body-parser")
+const cors = require("cors");
 
+// 跨域配置
+// app.use(cors());
 app.use(bodyparser.urlencoded({
     extended:true
 }))

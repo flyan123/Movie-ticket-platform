@@ -1,9 +1,13 @@
-import axios from "axios";
-import qs from "querystring"
+import axios from "axios"
+import qs from "querystring-es3"
+// import store from "../store"
 
-// 处理失败方法
-// status:状态码
 
+/**
+ * 处理失败的方法
+ * status:状态码
+ * info:信息
+ */
 const errorHandle = (status, info) => {
     switch (status) {
         case 400:
@@ -32,36 +36,44 @@ const errorHandle = (status, info) => {
 }
 
 
-// 创建axios实例对象
+
+/**
+ * 创建axios实例对象
+ */
+
 const instance = axios.create({
     // 公共配置
     // baseURL:"http://iwenwiki.com",
     timeout: 5000
 })
 
-// 处理拦截器
+/**
+ * 处理拦截器
+ */
 
-// 请求拦截
-
+/**
+ * 请求拦截
+ */
 instance.interceptors.request.use(
     config => {
         if (config.method === "post") {
             config.data = qs.stringify(config.data)
         }
-        /**
-         * 读取token
-         */
-        if (store.getState().auth.user.token) {
-            // 设置请求头
-            config.headers.Authorization = store.getState().auth.user.token;
-        }
+        // /**
+        //  * 读取token
+        //  */
+        // if (store.getState().auth.user.token) {
+        //     // 设置请求头
+        //     config.headers.Authorization = store.getState().auth.user.token;
+        // }
         return config
     },
     error => Promise.reject(error)
 )
 
-// 响应拦截
-
+/**
+ * 响应拦截
+ */
 instance.interceptors.response.use(
     // 完成了
     response => response.status === 200 ? Promise.resolve(response) : Promise.reject(response),
@@ -70,5 +82,6 @@ instance.interceptors.response.use(
         errorHandle(response.status, response.info);
     }
 )
+
 
 export default instance
