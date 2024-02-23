@@ -1,8 +1,12 @@
+// import validator from 'validator';
+
 const express = require("express");
 const router = express.Router();
 const validator = require('validator');
 // 如果value 为空，返回true ，否则返回false
-const isEmpty =require("lodash/isEmpty")
+const isEmpty = require("lodash/isEmpty");
+
+
 
 // 错误，错误信息；不发生错误，true
 const validatorInput = (data) =>{
@@ -18,8 +22,8 @@ const validatorInput = (data) =>{
     if (!validator.equals(data.password,data.confirm)){
         errors.confirm='两次密码不相同'
     }
-    if (!validator.isEmpty(data.email)){
-        errors.email='不符合邮箱格式'
+    if(!validator.isEmail(data.email)){
+        errors.email = "不符合邮箱格式"
     }
 
     return{

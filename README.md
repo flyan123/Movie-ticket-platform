@@ -106,6 +106,7 @@ npm install querystring-es3
 
  ## 跨域解决方案
 1. 后台：cors第三方
-    npm install --save cors
+    npm install --save cors √
 2. 前台：设置跨域代理
     参考地址：https://github.com/facebook/create-react-app/blob/master/docusaurus/docs/proxying-api-requests-in-development.md
+    npm install http-proxy-middleware --save √
