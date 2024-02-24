@@ -6,7 +6,7 @@ export default  class Signup extends Component{
   constructor(){
     super();
     this.state={
-      nickname:'',
+      username:'',
       password:'',
       confirm:'',
       email:'',
@@ -18,7 +18,7 @@ export default  class Signup extends Component{
     // console.log(this.state)
     api.register(
       {
-        nickname:this.state.nickname,
+        username:this.state.username,
         password:this.state.password,
         confirm:this.state.confirm,
         email:this.state.email,
@@ -35,7 +35,7 @@ export default  class Signup extends Component{
   }
 
   render(){
-    const{ nickname,password,confirm,email}=this.state
+    const{ username,password,confirm,email}=this.state
 
     return(
       <div>
@@ -47,8 +47,8 @@ export default  class Signup extends Component{
               <label >用户名</label>
               <input
                 type="text"
-                name="nickname"
-                value={nickname}
+                name="username"
+                value={username}
                 onChange={this.changeHandle}
               />
             </div>
