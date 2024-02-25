@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 // const validator = require('validator');
-const isEmpty = require("lodash/isEmpty");
+// const isEmpty = require("lodash/isEmpty");
 // const sqlFn = require("./config");
 // const url = require("url");
 // const jwt = require("jsonwebtoken");
@@ -15,7 +15,6 @@ const validatorInput = (data) =>{
     /**
      * validator.isEmpty方法验证是否为空
      */
-    
     let errors = {}
     if(validator.isEmpty(data.username)){
         errors.username = "用户名不能为空"
@@ -53,19 +52,15 @@ const validatorInput = (data) =>{
 
 
 
-router.post("/register",(req,res) =>{
-    const { isValid,errors } = validatorInput(req.body)
-    if(isValid){
-        // 失败
-        res.send({
-            errors,
-            status:400
-        })
-    }else{
-        res.send({
-            msg:"注册成功",
-            status:200
-                            })
+// router.post("/register",(req,res) =>{
+//     const { isValid,errors } = validatorInput(req.body)
+//     if(isValid){
+//         // 失败
+//         res.send({
+//             errors,
+//             status:400
+//         })
+//     }else{
 //         // 成功 将数据写入到数据库
 //         const { username,email,password } = req.body;
 //         const sql = "insert into user values (null,?,?,?)";
@@ -83,8 +78,8 @@ router.post("/register",(req,res) =>{
 //                 })
 //             }
 //         })
-    }
-})
+//     }
+// })
 
 /**
  * 重复用户名字
