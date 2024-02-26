@@ -5,8 +5,7 @@ import axios from "../utils/request"
  */
 const base = {
     baseUrl:"/api",
-    // register:"/api/register",
-    register:"/register",
+    register:"/api/register",
     // repeatusername:"/api/repeat/username",
     // login:"/api/login",
     // list:"/api/list"

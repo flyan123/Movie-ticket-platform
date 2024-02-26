@@ -5,7 +5,7 @@ const bodyparser = require("body-parser");
 // const cors = require("cors");
 // const debug = require("debug")("my-application");
 
-// 跨域配置
+// 后台跨域配置
 // app.use(cors());
 app.use(bodyparser.urlencoded({
     extended:true

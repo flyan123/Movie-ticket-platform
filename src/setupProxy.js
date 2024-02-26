@@ -1,5 +1,5 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
-
+// 前台配置跨域
 module.exports = function (app) {
   app.use(
     '/api',

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-// const validator = require('validator');
+const validator = require('validator');
 const isEmpty = require("lodash/isEmpty");
 // const sqlFn = require("./config");
 // const url = require("url");
@@ -24,7 +24,7 @@ const validatorInput = (data) =>{
         errors.email = "不符合邮箱格式"
     }
     if(validator.isEmpty(data.password)){
-        errors.password = "用户名不能为空"
+        errors.password = "密码不能为空"
     }
     /**
      * equals:验证字符串是否相同
