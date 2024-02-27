@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const validator = require('validator');
 const isEmpty = require("lodash/isEmpty");
-// const sqlFn = require("./config");
+const sqlFn = require("./config");
 // const url = require("url");
 // const jwt = require("jsonwebtoken");
 // const key = require("./secretKey")
@@ -62,28 +62,24 @@ router.post("/register",(req,res) =>{
             status:400
         })
     }else{
-        res.send({
-            msg:"注册成功",
-            status:200
-                            })
-//         // 成功 将数据写入到数据库
-//         const { username,email,password } = req.body;
-//         const sql = "insert into user values (null,?,?,?)";
-//         const arr = [username,password,email]
-//         sqlFn(sql,arr,result =>{
-//             if(result.affectedRows >0){
-//                 res.send({
-//                     msg:"注册成功",
-//                     status:200
-//                 })
-//             }else{
-//                 res.send({
-//                     msg:"注册失败",
-//                     status:401
-//                 })
-//             }
-//         })
-    }
+        // 成功 将数据写入到数据库
+        const { username,email,password } = req.body;
+        const sql = "insert into user values (null,?,?,?)";
+        const arr = [username,password,email]
+        sqlFn(sql,arr,result =>{
+            if(result.affectedRows >0){
+                res.send({
+                    msg:"注册成功",
+                    status:200
+                })
+            }else{
+                res.send({
+                    msg:"注册失败",
+                    status:401
+                })
+            }
+        })
+     }
 })
 
 /**

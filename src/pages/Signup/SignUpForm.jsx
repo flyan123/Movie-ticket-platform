@@ -27,6 +27,9 @@ export default class SignUpForm extends Component {
         }).then(res =>
              {
             console.log(res.data)
+            this.setState({
+                        errors:res.data
+                    })
 
 
             // if (res.data.status === 200) {
@@ -114,7 +117,7 @@ export default class SignUpForm extends Component {
                             <label className="control-label">PassWord</label>
                             <input
                                 className={classnames('form-control', { 'is-invalid': errors.password })}
-                                type="text"
+                                type="password"
                                 name="password"
                                 value={password}
                                 onChange={this.changeHandle}
@@ -126,13 +129,22 @@ export default class SignUpForm extends Component {
                             <label className="control-label">passwordConfirmation</label>
                             <input
                                 className={classnames('form-control', { 'is-invalid': errors.passwordConfirmation })}
-                                type="text"
+                                type="password"
                                 name="passwordConfirmation"
                                 value={passwordConfirmation}
                                 onChange={this.changeHandle}
                             />
                         {errors.passwordConfirmation ? <span style={{ color: 'red', fontSize: '10px' }}>{errors.passwordConfirmation}</span> : ''}
                         </div>
+                        <div className="form-group">
+                        {
+                            Object.keys(errors).length > 0 ?
+                            <button disabled className="btn btn-primary btn-lg">注册</button>
+                            :
+                            <button className="btn btn-primary btn-lg">注册</button>
+                        }
+                        
+                    </div>
                 </form>
 
             </div>
