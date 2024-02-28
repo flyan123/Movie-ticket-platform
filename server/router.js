@@ -67,6 +67,7 @@ router.post("/register",(req,res) =>{
         const sql = "insert into user values (null,?,?,?)";
         const arr = [username,password,email]
         sqlFn(sql,arr,result =>{
+            // console.log(result)
             if(result.affectedRows >0){
                 res.send({
                     msg:"注册成功",
