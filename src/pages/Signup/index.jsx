@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import SignUpForm from "./SignUpForm"
 import Topbutton from '../../components/Topbutton/index'
-import FlashMessage from '../../components/Flash/FlashMessage'
+import FlashMessageList from '../../components/Flash/FlashMessageList'
 // import { connect } from "react-redux"
 // import * as flashActions from "../../actions/flash"
 // import { bindActionCreators } from "redux"
@@ -11,7 +11,7 @@ export default class Signup extends Component {
         return (
             <div className="row">
                  <Topbutton/>
-                 <FlashMessage/>
+                 <FlashMessageList/>
 
                 <div className="col-md-3"></div>
                 <div className="col-md-6">

@@ -132,3 +132,6 @@ import classnames from 'classnames'
 ```
 ## 链接数据库
 npm install --save mysql √
+ 
+ ## 安装 Redux Toolkit
+ npm install @reduxjs/toolkit √
