@@ -9,16 +9,7 @@
 // import { ADD_FLASH,DEL_FLASH } from "../constants"
 
 const flashState = [
-   {
-    msg:"注册成功",
-    type:"success",
-    id:1001
-   },
-   {
-    msg:"注册失败",
-    type:"danger",
-    id:1002
-   }
+
 ]
 
 const flash = (state = flashState,action) =>{

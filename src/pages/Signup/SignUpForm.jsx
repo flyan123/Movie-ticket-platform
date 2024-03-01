@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import api from "../../api"
 import classnames from "classnames"
+import { withRouter } from "react-router-dom"
 
-export default class SignUpForm extends Component {
+ class SignUpForm extends Component {
 
     // 受控组件
     constructor() {
@@ -24,43 +25,39 @@ export default class SignUpForm extends Component {
             password: this.state.password,
             email: this.state.email,
             passwordConfirmation: this.state.passwordConfirmation
-        }).then(res =>
-             {
-            console.log(res.data)
-            this.setState({
-                        errors:res.data
-                    })
-
-
-            // if (res.data.status === 200) {
-            //     // 成功
-            //     this.props.flashActions.addFlashMessage({
-            //         id: Math.random().toString().slice(2),
-            //         msg: res.data.msg,
-            //         type: "success"
-            //     })
+        }).then(res =>{
+            if (res.data.status === 200) {
+                // 成功
+                console.log(res.data)
+                this.props.flashActions.addFlashMessage({
+                    id: Math.random().toString().slice(2),
+                    msg: res.data.msg,
+                    type: "success"
+                })
             //     this.setState({
             //         errors:{}
             //     })
             //     // 编程式导航
-            //     this.props.history.replace("/")
-            // }
-            // if (res.data.status === 400) {
-            //     this.setState({
-            //         errors: res.data.errors
-            //     })
-            // }
-            // if (res.data.status === 401) {
-            //     // 失败
-            //     this.props.flashActions.addFlashMessage({
-            //         id: Math.random().toString().slice(2),
-            //         msg: res.data.msg,
-            //         type: "danger"
-            //     })
+                this.props.history.replace("/part1")
+            }
+            if (res.data.status === 400) {
+                this.setState({
+                    errors: res.data.errors
+                })
+            }
+            if (res.data.status === 401) {
+                // 失败
+                console.log(res.data)
+
+                this.props.flashActions.addFlashMessage({
+                    id: Math.random().toString().slice(2),
+                    msg: res.data.msg,
+                    type: "danger"
+                })
             //     this.setState({
             //         errors:{}
             //     })
-            // }
+            }
         }
         ).catch(error => {
             console.log(error)
@@ -153,3 +150,4 @@ export default class SignUpForm extends Component {
 
 
 }
+export default withRouter(SignUpForm)
