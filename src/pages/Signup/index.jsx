@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import SignUpForm from "./SignUpForm"
 import Topbutton from '../../components/Topbutton/index'
 import FlashMessageList from '../../components/Flash/FlashMessageList'
-import { connect } from '../../../server/router'
+import { connect } from 'react-redux'
 // import { connect } from "react-redux"
 import * as flashActions from "../../actions/flash"
 import { bindActionCreators } from "redux"
@@ -16,8 +16,8 @@ import { bindActionCreators } from "redux"
 
                 <div className="col-md-3"></div>
                 <div className="col-md-6">
-                    <SignUpForm flashActions={ this.props.flashActions }/> 0
-                    <SignUpForm /> 
+                    <SignUpForm flashActions={ this.props.flashActions }/> 
+                    {/* <SignUpForm />  */}
                 </div>
                 <div className="col-md-3"></div>
             </div>

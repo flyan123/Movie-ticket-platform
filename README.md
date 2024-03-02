@@ -77,6 +77,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 1. 路由：npm install --save react-router-dom √
    
 2. 依赖：npm install --save redux √
+   
 3. npm install --save react-redux √
 4. npm install --save-dev redux-devtools-extension √
 5. 获取数据
@@ -135,3 +136,9 @@ npm install --save mysql √
  
  ## 安装 Redux Toolkit
  npm install @reduxjs/toolkit √
+
+ ## 服务器自动更新
+ 1. npm install -g nodemon √
+2. 配置 nodemon.json文件 
+3. 启动：nodemon index.js
+4. Desktop\求职项目\Movie-ticket-platform\server

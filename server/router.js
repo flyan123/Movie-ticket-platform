@@ -86,26 +86,26 @@ router.post("/register",(req,res) =>{
 /**
  * 重复用户名字
  */
-// router.get("/repeat/username",(req,res) =>{
-//     const username = url.parse(req.url,true).query.username;
-//     const sql = "select * from user where username=?";
-//     const arr = [username]
-//     sqlFn(sql,arr,result =>{
-//         if(result.length >0){
-//             res.send({
-//                 status:200,
-//                 msg:"用户名重复",
-//                 flag:false
-//             })
-//         }else{
-//             res.send({
-//                 status:200,
-//                 msg:"用户名可用",
-//                 flag:true
-//             })
-//         }
-//     })
-// })
+router.get("/repeat/username",(req,res) =>{
+    const username = url.parse(req.url,true).query.username;
+    const sql = "select * from user where username=?";
+    const arr = [username]
+    sqlFn(sql,arr,result =>{
+        if(result.length >0){
+            res.send({
+                status:200,
+                msg:"用户名重复",
+                flag:false
+            })
+        }else{
+            res.send({
+                status:200,
+                msg:"用户名可用",
+                flag:true
+            })
+        }
+    })
+})
 
 /**
  * 用户登陆

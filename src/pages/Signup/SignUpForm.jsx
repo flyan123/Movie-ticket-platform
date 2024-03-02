@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 import api from "../../api"
 import classnames from "classnames"
-import { withRouter } from "react-router-dom"
+// import { withRouter } from "react-router"
+import { withRouter } from 'react-router'  
+import {useNavigate} from 'react-router-dom'
+import {useHistory} from 'react-router-dom';
+
 
  class SignUpForm extends Component {
 
+    
     // 受控组件
     constructor() {
         super();
@@ -18,6 +23,8 @@ import { withRouter } from "react-router-dom"
     }
 
     onSubmit = (e) => {
+
+        const navigate = useNavigate();  
         e.preventDefault();
         console.log(e.target.name )
         api.register({
@@ -38,7 +45,8 @@ import { withRouter } from "react-router-dom"
             //         errors:{}
             //     })
             //     // 编程式导航
-                this.props.history.replace("/part1")
+                // this.props.history.replace("/part1")navigate
+                this.props.history.navigate("/part1")
             }
             if (res.data.status === 400) {
                 this.setState({
@@ -79,6 +87,7 @@ import { withRouter } from "react-router-dom"
     }
 
     render() {
+
         const { username, email, password, passwordConfirmation, errors } = this.state;
         return (
             <div>
@@ -150,4 +159,4 @@ import { withRouter } from "react-router-dom"
 
 
 }
-export default withRouter(SignUpForm)
+export default SignUpForm
