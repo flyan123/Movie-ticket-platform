@@ -10,6 +10,6 @@ export function addFlashMessage(message){
 export function delFlashMessage(){
     return{
         type:"delFlash",
-        
+        // id
     }
 }

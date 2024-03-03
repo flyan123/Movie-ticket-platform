@@ -6,7 +6,7 @@ import axios from "../utils/request"
 const base = {
     baseUrl:"/api",
     register:"/api/register",
-    // repeatusername:"/api/repeat/username",
+    repeatusername:"/api/repeat/username",
     // login:"/api/login",
     // list:"/api/list"
 }
@@ -30,11 +30,11 @@ const api = {
     /**
      * 用户名重复验证
      */
-    // repeatUserName(params){
-    //     return axios.get(base.baseUrl+base.repeatusername,{
-    //         params
-    //     })
-    // },
+    repeatUserName(params){
+        return axios.get(base.baseUrl+base.repeatusername,{
+            params
+        })
+    },
     /**
      * 登陆接口
      */

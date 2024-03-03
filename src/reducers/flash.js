@@ -5,11 +5,15 @@
  * }
  */
 
-// import findIndex from "lodash/findIndex"
+import findIndex from "lodash/findIndex"
 // import { ADD_FLASH,DEL_FLASH } from "../constants"
 
 const flashState = [
-
+{
+    id:1001,
+    msg:"提示信息",
+    type:'success'
+}
 ]
 
 const flash = (state = flashState,action) =>{
@@ -22,12 +26,13 @@ const flash = (state = flashState,action) =>{
             ]
         // case DEL_FLASH:
         case "delFlash":
-            return state;
-            // let currentIndex = findIndex(state,(item) => item.id === action.id)
-            // return [
-            //     ...state.slice(0,currentIndex),
-            //     ...state.slice(currentIndex+1)
-            // ];
+// 删除事件
+            let currentIndex = findIndex(state,(item) => item.id === action.id)
+            // return state;
+            return [
+                ...state.slice(0,currentIndex),
+                ...state.slice(currentIndex+1)
+            ];
         default:
             return state;
     }

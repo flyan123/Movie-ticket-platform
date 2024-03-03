@@ -18,7 +18,7 @@ import {useHistory} from 'react-router-dom';
             email: "",
             password: "",
             passwordConfirmation: "",
-            errors: {}
+            errors: {},
         }
     }
 
@@ -85,6 +85,28 @@ import {useHistory} from 'react-router-dom';
             [e.target.name]: e.target.value
         })
     }
+    onBlurCheckUserName=()=>{
+        api.repeatUserName({
+            username:this.state.username
+        }).then(res=>{
+            if(res.data.flag){
+                // 不重复
+                this.setState({
+                    errors:{  }
+                    })
+            }else{
+                // 重复
+                this.setState({
+                    errors:{
+                        username:res.data.msg
+                    }
+                //    [ this.state.errors.username]:res.data.msg
+                })
+            }
+           
+        }).catch(error=>{
+    })
+    }
 
     render() {
 
@@ -114,6 +136,7 @@ import {useHistory} from 'react-router-dom';
                                 name="email"
                                 value={email}
                                 onChange={this.changeHandle}
+                                onBlur={this.onBlurCheckUserName}
                             />
                         {errors.email ? <span style={{ color: 'red', fontSize: '10px' }}>{errors.email}</span> : ''}
                         </div>
