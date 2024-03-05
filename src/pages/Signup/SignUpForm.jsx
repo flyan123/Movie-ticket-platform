@@ -4,7 +4,7 @@ import classnames from "classnames"
 import { withRouter } from "react-router"
 import {useNavigate} from 'react-router-dom'
 import {useHistory} from 'react-router-dom';
-
+import sigupstyle from './sig.module.less'
 
  class SignUpForm extends Component {
 
@@ -112,11 +112,13 @@ import {useHistory} from 'react-router-dom';
         const { username, email, password, passwordConfirmation, errors } = this.state;
         return (
             <div>
-                <form onSubmit={this.onSubmit}>
+                <form onSubmit={this.onSubmit} className={sigupstyle.all}>
                     <h1>管理人员注册</h1>
-                        <div className="form-group">
-                            <label className="control-label">Username</label>
+                        <div className>
+                            <label className={sigupstyle.user}>Username</label>
+                            <br/>
                             <input
+                            
                                 className={classnames('form-control', { 'is-invalid': errors.username })}
                                 type="text"
                                 name="username"
@@ -129,6 +131,7 @@ import {useHistory} from 'react-router-dom';
 
                         <div>
                             <label className="control-label">Email</label>
+                            <br/>
                             <input
                                 className={classnames('form-control', { 'is-invalid': errors.email })}
                                 type="text"
@@ -143,6 +146,7 @@ import {useHistory} from 'react-router-dom';
 
                         <div>
                             <label className="control-label">PassWord</label>
+                            <br/>
                             <input
                                 className={classnames('form-control', { 'is-invalid': errors.password })}
                                 type="password"
@@ -155,6 +159,7 @@ import {useHistory} from 'react-router-dom';
 
                         <div>
                             <label className="control-label">passwordConfirmation</label>
+                            <br/>
                             <input
                                 className={classnames('form-control', { 'is-invalid': errors.passwordConfirmation })}
                                 type="password"
