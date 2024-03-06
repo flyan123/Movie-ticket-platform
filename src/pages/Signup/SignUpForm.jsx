@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import api from "../../api"
 import classnames from "classnames"
-import { withRouter } from "react-router"
+// import { withRouter } from "react-router"
 import {useNavigate} from 'react-router-dom'
 import {useHistory} from 'react-router-dom';
 import sigupstyle from './sig.module.less'
@@ -114,9 +114,10 @@ import sigupstyle from './sig.module.less'
             <div>
                 <form onSubmit={this.onSubmit} className={sigupstyle.all}>
                     <h1>管理人员注册</h1>
-                        <div className>
-                            <label className={sigupstyle.user}>Username</label>
+                        <div >
+                            < label>Username</label>
                             <br/>
+                            
                             <input
                             
                                 className={classnames('form-control', { 'is-invalid': errors.username })}
@@ -169,7 +170,8 @@ import sigupstyle from './sig.module.less'
                             />
                         {errors.passwordConfirmation ? <span style={{ color: 'red', fontSize: '10px' }}>{errors.passwordConfirmation}</span> : ''}
                         </div>
-                        <div className="form-group">
+                        <div className={sigupstyle.into}>
+                        {/* <div className="form-group"> */}
                         {
                             Object.keys(errors).length > 0 ?
                             <button disabled className="btn btn-primary btn-lg">注册</button>
