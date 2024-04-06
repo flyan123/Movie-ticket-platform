@@ -51,7 +51,7 @@ const Register = () => {
 
     const [form] = Form.useForm();
   const onFinish = (values) => {
-    console.log('管理员新用户输入的: ', values);
+    console.log('新用户输入的: ', values);
     // console.log(this.state.nickname);
   };
 

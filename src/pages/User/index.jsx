@@ -5,7 +5,7 @@ import {useRoutes,Link} from 'react-router-dom';
 
 import logstyle from './login.module.less'
 import  './login.less'
-import initLoginBg from "./init.ts";
+// import initLoginBg from "./init.ts";
 // 引入ant design
 import { Input, Space ,Flex ,Button} from 'antd';
 
@@ -23,11 +23,7 @@ export default function User() {
 
 // 登入框
 function Login() {
-    useEffect(() => {
-        initLoginBg();
-        Window.onresive = function () { initLoginBg() }
-        // 自适应背景
-    }, [])
+    
 
    const [usernameVal,setUsernameVal]=useState('')
    const [passworldVal,setPassworldVal]=useState('')
